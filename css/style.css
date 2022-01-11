@@ -1,0 +1,461 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto Slab', serif; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #232222;
+}
+
+.container {
+    max-width: 1220px; /*max ширина. мб и меньше, чем 1200px*/
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+a {
+    color: inherit; /*цвет наследуется у родителя*/
+    text-decoration: none;
+}
+
+/*1 block*/
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.logo {
+    margin-left: 16px;
+}
+.phone {
+    margin-right: 43px;
+    margin-top: 11px;
+    height: 30px;
+}
+.phone__img:hover {
+    opacity: 0.7;
+    transition: .5s linear;
+    transform: rotate(360deg);
+}
+.menu {
+    margin-top: 16px;
+}
+.menu__list {
+    display: flex;
+}
+.menu__item + .menu__item { /*отступ слева у всех элементов, кроме первого*/
+    margin-left: 30px;
+}
+.menu__link {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #001E64;
+    font-size: 18px;
+    line-height: 21px;
+}
+.menu__link:hover {
+    border-bottom: 2px solid #001E64;
+    transition: .1s linear;
+}
+
+.header__content {
+    background-image: url(../images/header-content-bg.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-bottom: 20px; /*побольше растянуть картинку*/
+    margin-top: -100px;
+    min-height: calc(100vh - 50px); /*100% высоты экрана*/
+}
+.title {
+    font-size: 72px;
+    line-height: 95px;
+    color: #001E64;
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    max-width: 589px;
+    padding: 170px 0 0 112px;
+    margin-bottom: 60px;
+}
+/*-slider-1*/
+.header-slider {
+    max-width: 522px;
+    padding-left: 112px;
+    padding-top: 57px;
+    padding-bottom: 135px;
+}
+.header-slider__text {
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    margin-bottom: 22px;
+}
+.slick-prev,
+.slick-next {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    left: 40px;
+}
+.slick-prev {
+    top: 0;
+}
+.slick-next {
+    bottom: 0;
+}
+.slick-dots {
+    list-style: none;
+    position: absolute;
+    left: 35px;
+    top: 58px;
+    bottom: 55px;
+    display: flex; /*распологаем в ряд*/
+    flex-direction: column; /*меняем ось*/
+    justify-content: space-between; /*распологаем между*/
+}
+.slick-dots button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.slick-active button {
+    opacity: 1;
+}
+.slick-dots button::before {
+    content: '0';
+}
+.slick-dots li:nth-child(n + 10) button::before { /*не добавлять нули в начале для чисел после 9 (те: 10, 11 и тд...)*/
+    content: '';
+}
+/*---*/
+.header__content-btn {
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .5); /*задаём отдельно прозрачность для фона кнопки через rgba*/
+    padding: 14px 88px;
+    font-size: 23px;
+    line-height: 32px;
+    margin-left: 112px;
+    display: inline-block; /*чтобы работали свойства блочных элементов у ссылки*/
+    transform: translateY(-100px);
+    position: absolute;
+}
+.header__content-btn:hover {
+    background: rgba(255, 255, 255, .8);
+    transition: .5s linear;
+    color: #001E64;
+}
+.header__content-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+}
+.header__content-link--active {
+    font-weight: 700;
+}
+
+/*2 block*/
+.ordering {
+    padding-top: 100px;
+    margin-bottom: 36px;
+}
+.ordering__inner {
+    display: flex;
+    justify-content: space-between;
+}
+/*-slider-2*/
+.ordering__name {
+    width: 510px;
+    text-align: center;
+    padding-top: 41px;
+}
+.ordering__item {
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+}
+.ordering__item.slick-current {
+    font-weight: 700;
+    color: #001E64;
+    font-size: 36px;
+}
+.ordering__item + .ordering__item { /*кроме первого*/
+    margin-top: 30px;
+}
+.ordering-prev {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ordering-prev,
+.ordering-next {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.ordering__content {
+    width: 600px;
+}
+.ordering__info {
+    display: flex;
+    justify-content: space-between;
+}
+.ordering-slider__img {
+    padding-bottom: 35px;
+    object-fit: cover;
+}
+.ordering-slider__properties {
+    margin-left: 48px;
+    width: 291px;
+}
+.ordering-slider__season {
+    margin-bottom: 30px;
+}
+.ordering-slider__catchrange {
+    margin-bottom: 30px;
+}
+.ordering-slider__name {
+    color: #001E64;
+    font-family: 'Roboto Slab';
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+.ordering-slider__crab-name {
+    margin-bottom: 20px;
+    color: #001E64;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Roboto Slab';
+}
+.ordering-slider__text {
+    line-height: 19px;
+    margin-bottom: 27px;
+}
+.ordering-btn {
+    border: 1px solid #001E64;
+    border-radius: 20px;
+    padding: 12px 85px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Roboto Slab';
+    line-height: 32px;
+    background-color: transparent;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.ordering-btn:hover {
+    transition: .4s linear;
+    background-color: #001E64;
+    opacity: 0.75;
+    color:white;
+}
+/*---*/
+
+/*3 block*/
+.ordering__bottom {
+    background-image: url(../images/main-content-bg.png);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 290px 0 95px 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    font-family: 'Roboto Slab';
+    color: #fff;
+}
+.ordering-bottom__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 100px;  
+} 
+/* .ordering-bottom__items {
+    display: flex;
+    justify-content: space-around;
+} */
+.ordering-bottom__element {
+    width: 180px;
+    min-height: 165px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    background-image: url(../images/shell.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*4 block*/
+.seafood {
+    padding: 100px 0;
+}
+.seafood__items {
+    margin-bottom: 100px;
+}
+.seafood__element {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.seafood__element-content:nth-child(2) {
+    margin-right: 180px;
+}
+.seafood__element-title {
+    max-width: 491px;
+    margin-bottom: 30px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    line-height: 29px;
+    color: #001E64;
+}
+.seafood__element-text {
+    max-width: 420px;
+    margin-bottom: 20px;
+}
+
+.seafood__blockquote {
+    max-width: 800px;
+    margin: 0 auto; /*по центру*/
+    text-align: center;
+}
+.seafood__blockquote-text {
+    max-width: 696px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/*5 block*/
+.contacts {
+    background-image: url(../images/contacts-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+.contacts__box {
+    max-width: 400px;
+    margin-left: auto;
+    background-color: #fff;
+    padding: 33px 0;
+    padding-left: 20px;
+}
+.contacts__box-text {
+    color: #001E64;
+    font-family: 'Roboto Slab', serif;
+    line-height: 24px;
+    font-size: 18px;
+}
+.contacts__box-list {
+    font-size: 18px;
+    line-height: 21px;
+
+}
+.contacts__box-item {
+    margin-top: 30px;
+    list-style: none;
+}
+.contacts__box-item span {
+    display: block;
+}
+
+/*6 block*/
+.footer {
+    padding: 29px 0 90px;
+}
+.footer__inner {
+    padding-left: 23px;
+    padding-right: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer__inner .menu {
+    padding-bottom: 35px;
+}
+.footer-social__list {
+    display: flex;
+    align-items: center;
+    padding-bottom: 22px;
+}
+.footer-social__item {
+    list-style: none;
+}
+.footer-social__item + .footer-social__item {
+    margin-left: 10px;
+}
+.footer-social__link:hover path {
+    fill: #001E64;
+    transition: all .6s linear;
+}
+
+/*additionally for adaptive: (burger)*/
+.menu__btn {
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    padding: 15px 0;
+    position: relative;
+    transition: .2s linear;
+    display: none;
+}
+.menu__btn::after,
+.menu__btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #001E64;
+}
+.menu__btn::before {
+    top: 0;
+}
+.menu__btn::after {
+    bottom: 0;
+}
+.menu__btn span {
+    display: block;
+    height: 4px;
+    background-color: #001E64;
+    transition: .2s linear;
+}
+.menu__btn--active:before {
+    content: '';
+    display: none;
+}
+.menu__btn--active::after {
+    content: '';
+    top: 15px;
+    transform: rotate(90deg);
+}
+.menu__btn--active {
+    transform: rotate(45deg);
+    transition: .3s linear;
+}
+.menu__btn:hover {
+    opacity: 0.7;
+}
